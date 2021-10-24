@@ -1,0 +1,31 @@
+input(type="text" name='attr_character_name')
+input(type='number' name='attr_attack' value='1')
+input(type='text' name='attr_attack_name')
+textarea(rows="6" name='attr_attack_description')
+select(name='attr_attack_type')
+  each type in attackTypes
+    option(value=type) #{type}
+button(
+  type='roll'
+  name='roll_attack'
+  value='&{template:custom} '
+  + '{{title=@{attack_name} }} '
+  + '{{@{attack_type}=[[@{attack}d20]]}} '
+  + '{{desc=**Definition:** @{attack_description} }}'
+) Attack example
+
+button(class=['sheet-btn'] type='action' name='act_strength') Click me
+
+rolltemplate.sheet-rolltemplate-test
+  div.sheet-template-container
+    h1 {{name}}
+    div.sheet-results
+      h4 Result = {{skillRole}}
+      h4 Custom Result = {{computed::skillRole}}
+
+include roll-templates/custom
+
+script(type='text/worker')
+  include modules/rollWorker.js
+
+

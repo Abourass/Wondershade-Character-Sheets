@@ -1,0 +1,17 @@
+rolltemplate.sheet-rolltemplate-custom
+  div(class=['sheet-container', 'sheet-color-{{color}}'])
+    div.sheet-header
+      | {{#title}}
+      div.sheet-title {{title}}
+      | {{/title}}
+      | {{#subtitle}}
+      div.sheet-subtitle {{subtitle}}
+      | {{/subtitle}}
+    div.sheet-content
+      | {{#allprops() title subtitle desc color}}
+      div.sheet-key {{key}}
+      div.sheet-value {{value}}
+      | {{/allprops() title subtitle desc color}}
+      | {{#desc}}
+      div.sheet-desc {{desc}}
+      | {{/desc}}

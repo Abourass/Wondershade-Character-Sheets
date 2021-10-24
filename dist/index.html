@@ -1,0 +1,47 @@
+
+<input type="text" name="attr_character_name"/>
+<input type="number" name="attr_attack" value="1"/>
+<input type="text" name="attr_attack_name"/>
+<textarea rows="6" name="attr_attack_description"></textarea>
+<select name="attr_attack_type">
+  <option value="Physical">Physical</option>
+  <option value="Magical">Magical</option>
+  <option value="Other">Other</option>
+</select>
+<button type="roll" name="roll_attack" value="&amp;{template:custom} {{title=@{attack_name} }} {{@{attack_type}=[[@{attack}d20]]}} {{desc=**Definition:** @{attack_description} }}">Attack example</button>
+<button class="sheet-btn" type="action" name="act_strength">Click me</button>
+<rolltemplate class="sheet-rolltemplate-test">
+  <div class="sheet-template-container">
+    <h1>{{name}}</h1>
+    <div class="sheet-results">
+      <h4>Result = {{skillRole}}</h4>
+      <h4>Custom Result = {{computed::skillRole}}</h4>
+    </div>
+  </div>
+</rolltemplate>
+<rolltemplate class="sheet-rolltemplate-custom">
+  <div class="sheet-container sheet-color-{{color}}">
+    <div class="sheet-header">{{#title}}
+      <div class="sheet-title">{{title}}</div>{{/title}}
+      {{#subtitle}}
+      <div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+    </div>
+    <div class="sheet-content">{{#allprops() title subtitle desc color}}
+      <div class="sheet-key">{{key}}</div>
+      <div class="sheet-value">{{value}}</div>{{/allprops() title subtitle desc color}}
+      {{#desc}}
+      <div class="sheet-desc">{{desc}}</div>{{/desc}}
+    </div>
+  </div>
+</rolltemplate>
+<script type="text/worker">
+  on('clicked:test', async(info) => {
+    const results = await startRoll("&{template:test} {{name=Test}} {{skillRole=[[1d20]]}}")
+    console.log({results});
+    const total = results.skillRole.result
+    const computed = total * 5;
+    
+    finishRoll(rollId, { skillRole: computed } );
+  });
+
+</script>
