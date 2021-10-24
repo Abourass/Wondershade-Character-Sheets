@@ -14,14 +14,7 @@ button(
   + '{{desc=**Definition:** @{attack_description} }}'
 ) Attack example
 
-button(class=['sheet-btn'] type='action' name='act_strength') Click me
-
-rolltemplate.sheet-rolltemplate-test
-  div.sheet-template-container
-    h1 {{name}}
-    div.sheet-results
-      h4 Result = {{skillRole}}
-      h4 Custom Result = {{computed::skillRole}}
+button(class=['sheet-btn'] type='action' name='act_skill' skill="Ground Pound") Click me
 
 include roll-templates/custom
 
