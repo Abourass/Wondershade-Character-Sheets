@@ -2,17 +2,18 @@
 - const attrName = name => name.replace(/ /g, '_');
 - const removeSpace = name => name.replace(/ /g, '');
 - const toLowerCase = name => name.toLowerCase();
+- const capitalize = name => name.charAt(0).toUpperCase() + name.slice(1);
 
 mixin textInput(name)
-	label(data-i18n-title=`enter ${name}` title=`enter ${name}`)
-		input(data-i18n-placeholder=name name=`attr_${attrName(name)}` placeholder=name title=`@{${attrName(name)}}` type='text' value='')
+	label(title=`Enter ${capitalize(name)}`)
+		input(name=`attr_${attrName(name)}` placeholder=`${capitalize(name)}` title=`@{${attrName(name)}}` type='text' value='')
 
 mixin numberInput(name)
-	label(data-i18n-title=`enter ${name}` title=`enter ${name}`)
+	label(title=`Enter ${capitalize(name)}`)
 		input(name=`attr_${attrName(name)}` title=`@{${attrName(name)}}` type='number' value='')
 
 mixin checkboxInput(name)
-	label.styled-checkbox.grid(data-i18n-title=`toggle ${name}` title=`enter ${name}`)
+	label.styled-checkbox.grid(title=`enter ${name}`)
 		input(name=`attr_${attrName(name)}` title=`@{${attrName(name)}}` type='checkbox' value=name)
 		span.pictos 3
 
@@ -24,7 +25,7 @@ mixin textarea(name)
 	textarea(name=`attr_${attrName(name)}` placeholder=name)
 
 mixin rollButton(name)
-	button.text-capitalize(data-i18n=name name=`roll_${buttonName(name)}` type='roll' value!=`&{template:rolls} {{header=^{${name}}}} {{dice=[[1d20[Roll]]]}}`)
+	button.text-capitalize(name=`roll_${buttonName(name)}` type='roll' value!=`&{template:rolls} {{header=^{${name}}}} {{dice=[[1d20[Roll]]]}}`)
 
 mixin repeatingRollButton(name)
 	button.text-left.ellipsis.font-weight-bold(name=`roll_${buttonName(name)}` type='roll' value!=`&{template:rolls} {{header=@{name}}} {{dice=@{description}}}`)

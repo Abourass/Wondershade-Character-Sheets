@@ -1,21 +1,36 @@
 
-<label data-i18n-title="enter character name" title="enter character name">
-  <input data-i18n-placeholder="character name" name="attr_character_name" placeholder="character name" title="@{character_name}" type="text" value=""/>
-</label>
-<label data-i18n-title="enter attack" title="enter attack">
-  <input name="attr_attack" title="@{attack}" type="number" value=""/>
-</label>
-<label data-i18n-title="enter attack name" title="enter attack name">
-  <input data-i18n-placeholder="attack name" name="attr_attack_name" placeholder="attack name" title="@{attack_name}" type="text" value=""/>
-</label>
+<div class="row">
+  <div class="col">
+    <label title="Enter Character name">
+      <input name="attr_character_name" placeholder="Character name" title="@{character_name}" type="text" value=""/>
+    </label>
+  </div>
+  <div class="col">
+    <label title="Enter Age">
+      <input name="attr_age" placeholder="Age" title="@{age}" type="text" value=""/>
+    </label>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <label title="Enter Attack">
+      <input name="attr_attack" title="@{attack}" type="number" value=""/>
+    </label>
+  </div>
+  <div class="col">
+    <label title="Enter Attack name">
+      <input name="attr_attack_name" placeholder="Attack name" title="@{attack_name}" type="text" value=""/>
+    </label>
+  </div>
+</div>
 <textarea name="attr_attack_description" placeholder="attack description"></textarea>
 <select name="attr_attack_type">
   <option value="Physical">Physical</option>
   <option value="Magical">Magical</option>
   <option value="Other">Other</option>
 </select>
-<button type="roll" name="roll_attack" value="&amp;{template:custom} {{title=@{attack_name} }} {{@{attack_type}=[[@{attack}d20]]}} {{desc=**Definition:** @{attack_description} }}">Attack example</button>
-<button class="sheet-btn" type="action" name="act_skill" skill="Ground Pound">Click me</button>
+<button type="roll" name="roll_attack" value="&amp;{template:custom} {{title=@{attack_name} }} {{@{attack_type}=[[@{attr_attack}d20]]}} {{desc=**Definition:** @{attack_description} }}">Attack example</button>
+<button class="sheet-btn" type="action" name="act_skill">Click me</button>
 <rolltemplate class="sheet-rolltemplate-custom">
   <div class="sheet-container sheet-color-{{color}}">
     <div class="sheet-header">{{#title}}

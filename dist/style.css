@@ -1,3 +1,19 @@
+/* Layout */
+.sheet-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.sheet-col {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+
 .sheet-btn {
   margin-bottom: 0.5rem;
   background-color: #fff;
@@ -43,7 +59,6 @@
   font-size:.9em;
 }
 
-/* example colors */
 .sheet-rolltemplate-custom .sheet-container {
   /* this is the default color */
   --header-bg-color: rgba(112,32,130,1);
