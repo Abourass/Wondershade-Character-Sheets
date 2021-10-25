@@ -1,3 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+/* Defaults */
+* {
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* Frame  */
+.sheet-frame {
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #331b35 0%, #090a0f 100%);
+  display: flex;
+  justify-content: center;
+}
+
+/* Variables */
+:root {
+  --theme-bg-color: rgba(16 18 27 / 40%);
+  --border-color: rgba(113 119 144 / 25%);
+  --theme-color: #f9fafb;
+  --inactive-color: rgb(113 119 144 / 78%);
+  --body-font: "Poppins", sans-serif;
+  --hover-menu-bg: rgba(12 15 25 / 30%);
+  --content-title-color: #999ba5;
+  --content-bg: rgb(146 151 179 / 13%);
+  --button-inactive: rgb(249 250 251 / 55%);
+  --dropdown-bg: #21242d;
+  --dropdown-hover: rgb(42 46 60);
+  --popup-bg: rgb(22 25 37);
+  --search-bg: #14162b;
+  --overlay-bg: rgba(36, 39, 59, 0.3);
+  --scrollbar-bg: rgb(1 2 3 / 40%);
+}
+
+.sheet-app {
+  font-family: var(--body-font);
+  background-color: var(--theme-bg-color);
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  border-radius: 14px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Header */
+.sheet-header {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sheet-header-menu {
+  display: flex;
+  align-items: center;
+}
+
+.sheet-wrapper {
+  display: flex;
+  flex-grow: 1;
+}
+
 /* Layout */
 .sheet-row {
   display: flex;
@@ -99,9 +166,7 @@
 
 /* Make even-numbered rows grey */
 .sheet-rolltemplate-custom .sheet-content :nth-child(4n+3),
-.sheet-rolltemplate-custom .sheet-content :nth-child(4n) {
-  background:#EEE;
-}
+.sheet-rolltemplate-custom .sheet-content :nth-child(4n) { background:#EEE; }
 
 /* Description field */
 .sheet-rolltemplate-custom .sheet-desc {

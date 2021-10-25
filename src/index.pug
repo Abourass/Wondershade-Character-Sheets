@@ -1,12 +1,15 @@
 include abstracts/mixins
 
-include layout/attributes
+.frame
+  .app
+    .header
+      include layout/attributes
+    .wrapper
+      
 
-button(class=['sheet-btn'] type='action' name='act_skill') Click me
+    button(class=['sheet-btn'] type='action' name='act_skill') Click me
 
 include roll-templates/custom
 
 script(type='text/worker')
   include modules/rollWorker.js
-
-
