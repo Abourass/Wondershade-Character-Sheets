@@ -1,8 +1,14 @@
 
-<input type="text" name="attr_character_name"/>
-<input type="number" name="attr_attack" value="1"/>
-<input type="text" name="attr_attack_name"/>
-<textarea rows="6" name="attr_attack_description"></textarea>
+<label data-i18n-title="enter character name" title="enter character name">
+  <input data-i18n-placeholder="character name" name="attr_character_name" placeholder="character name" title="@{character_name}" type="text" value=""/>
+</label>
+<label data-i18n-title="enter attack" title="enter attack">
+  <input name="attr_attack" title="@{attack}" type="number" value=""/>
+</label>
+<label data-i18n-title="enter attack name" title="enter attack name">
+  <input data-i18n-placeholder="attack name" name="attr_attack_name" placeholder="attack name" title="@{attack_name}" type="text" value=""/>
+</label>
+<textarea name="attr_attack_description" placeholder="attack description"></textarea>
 <select name="attr_attack_type">
   <option value="Physical">Physical</option>
   <option value="Magical">Magical</option>

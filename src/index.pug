@@ -1,18 +1,6 @@
-input(type="text" name='attr_character_name')
-input(type='number' name='attr_attack' value='1')
-input(type='text' name='attr_attack_name')
-textarea(rows="6" name='attr_attack_description')
-select(name='attr_attack_type')
-  each type in attackTypes
-    option(value=type) #{type}
-button(
-  type='roll'
-  name='roll_attack'
-  value='&{template:custom} '
-  + '{{title=@{attack_name} }} '
-  + '{{@{attack_type}=[[@{attack}d20]]}} '
-  + '{{desc=**Definition:** @{attack_description} }}'
-) Attack example
+include abstracts/mixins
+
+include layout/attributes
 
 button(class=['sheet-btn'] type='action' name='act_skill' skill="Ground Pound") Click me
 

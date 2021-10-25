@@ -1,0 +1,16 @@
++textInput('character name')
++numberInput('attack')
++textInput('attack name')
++textarea('attack description')
+
+select(name='attr_attack_type')
+  each type in attackTypes
+    option(value=type) #{type}
+button(
+  type='roll'
+  name='roll_attack'
+  value='&{template:custom} '
+  + '{{title=@{attack_name} }} '
+  + '{{@{attack_type}=[[@{attack}d20]]}} '
+  + '{{desc=**Definition:** @{attack_description} }}'
+) Attack example
